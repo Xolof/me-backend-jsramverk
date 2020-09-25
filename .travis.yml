@@ -8,6 +8,10 @@ node_js:
 
 sudo: false
 
+env:
+    global:
+        JWT_SECRET="jsksfnfisdjdsjsdjdskdfvmfdfsåpsdä2348ej383j"
+
 git:
     submodules: false
 
