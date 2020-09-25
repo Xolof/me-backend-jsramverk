@@ -4,8 +4,8 @@
   "description": "Backend for me-app in course jsramverk",
   "main": "app.js",
   "scripts": {
-    "pretest": "bash db/reset_test_db.bash",
-    "test": "export JWT_SECRET='longAndRandomString1435#67%976hdjdjkSDFj£dj)djdj'&& nyc --reporter=html --reporter=text --reporter=clover mocha 'test/**/*.js' --timeout 5000",
+    "pretest": "bash db/reset_test_db.bash && export JWT_SECRET='longAndRandomString1435#67%976hdjdjkSDFj£dj)djdj'",
+    "test": "nyc --reporter=html --reporter=text --reporter=clover mocha 'test/**/*.js' --timeout 5000",
     "start": "nodemon app.js",
     "production": "NODE_ENV='production' node app.js",
     "eslint": "eslint ."
