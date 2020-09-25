@@ -2,12 +2,13 @@ var express = require("express");
 var router = express.Router();
 
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./db/texts.sqlite');
+const db = require("../db/database.js");
 
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const checkToken = require("../models/auth.js");
+const auth = require("../models/auth.js");
+const checkToken = auth.checkToken;
 
 router.get("/", (req, res, next) => {
     db.get("SELECT presentation FROM presentations WHERE id = 1",
@@ -161,7 +162,6 @@ router.post("/login", (req, res) => {
 router.post("/reports",
     (req, res, next) => checkToken(req, res, next),
     (req, res) => {
-        console.log(req.body);
         db.run("INSERT INTO reports (week, report) VALUES (?, ?)",
         req.body.week,
         req.body.text,

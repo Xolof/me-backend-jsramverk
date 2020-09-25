@@ -36,6 +36,7 @@ app.use('/', router);
 
 app.use((req, res, next) => {
     var err = new Error("Not Found");
+
     err.status = 404;
     next(err);
 });
@@ -46,14 +47,16 @@ app.use((err, req, res, next) => {
     }
 
     res.status(err.status || 500).json({
-       "errors": [
-           {
-               "status": err.status,
-               "title": err.message,
-               "detail": err.message
-           }
-       ]
+        "errors": [
+            {
+                "status": err.status,
+                "title": err.message,
+                "detail": err.message
+            }
+        ]
     });
 });
 
-app.listen(port, () => console.log(`Me-API listening on port ${port}`));
+const server = app.listen(port, () => console.log(`Me-API listening on port ${port}`));
+
+module.exports = server;
