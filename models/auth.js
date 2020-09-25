@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 
 function checkToken(req, res, next) {
     const token = req.headers["x-access-token"];
+
     const secret = process.env.JWT_SECRET;
 
     if (!verify(token, secret)) {

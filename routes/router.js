@@ -144,7 +144,9 @@ router.post("/login", (req, res) => {
             };
 
             const payload = { email: req.body.email };
+
             const secret = process.env.JWT_SECRET;
+
             const token = jwt.sign(payload, secret, { expiresIn: "1h" });
 
             const data = {
