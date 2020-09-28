@@ -7,7 +7,7 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/Xolof/me-backend-jsramverk/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Xolof/me-backend-jsramverk/?branch=master)
 
 [![Build Status](https://scrutinizer-ci.com/g/Xolof/me-backend-jsramverk/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Xolof/me-backend-jsramverk/build-status/master)
-
+:q
 ## Installation
 ```
 npm install
